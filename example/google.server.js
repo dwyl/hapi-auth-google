@@ -22,13 +22,13 @@ server.route({
   method: 'GET',
   path: '/',
   handler: function(req, reply) {
-    var url = hapi_auth_google.generate_google_oauth2_url(opts);
+    var url = server.generate_google_oauth2_url();
     reply("<a href='" + url +"'>Click to Login!</a>" );
   }
 });
 
 server.start(function(err){ // boots your server
-  assert(!err, "FAILED TO Start Server")
+  assert(!err, "FAILED TO Start Server");
 	console.log('Now Visit: http://localhost:'+server.info.port);
 });
 

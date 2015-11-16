@@ -34,38 +34,41 @@ npm install hapi-auth-google --save
 
 ### 2. Create an App on the Google Developer Console
 
-To get access to the Google Account API you will *first*
-need to create an app by visiting the google developer console:
+To get access to the Google Account (Plus) API you will *first*
+need to create an app  
+by visiting the google developer console:
 https://console.developers.google.com
 
-
+> If you are totally new to using the Google API,
+we created   
+[***GOOGLE-APP-STEP-BY-STEP-GUIDE***](https://github.com/dwyl/hapi-auth-google/blob/master/CREATE-GOOGLE-APP-STEP-BY-STEP-GUIDE.md) *just* for you!  
+( *Note: if you still have any questions*, ***ask***! )
 
 ### 3. Export the *Required* Environment Variables
 
-To enable Google Auth you will need to have two Environment Variables set:
+Once you've created your app following the [*GOOGLE-APP-STEP-BY-STEP-GUIDE*](https://github.com/dwyl/hapi-auth-google/blob/master/CREATE-GOOGLE-APP-STEP-BY-STEP-GUIDE.md)
+
+Export the Environment Variables:
 ```sh
 GOOGLE_CLIENT_ID=YourAppsClientId.apps.googleusercontent.com
 GOOGLE_CLIENT_SECRET=SuperSecret
 ```
-To *get* these Environment Variables,
-You will need to create an App on
-and get your `CLIENT_ID` & `CLIENT_SECRET`.
-We export these two variables prefixed with `GOOGLE_`
-to distinguish them from other services.
+We export the two variables prefixed with `GOOGLE_`
+to distinguish them from other services you may be using.
 
-> If you are new to Environment Variables or need a reminder,
-see: https://github.com/dwyl/learn-environment-variables
+> Note: If you are new to Environment Variables or need a reminder,  
+see: [https://github.com/dwyl/**learn-environment-variables**](https://github.com/dwyl/learn-environment-variables)
 
 ### 4. Create Your (Custom) Handler Function
 
 This is where you decide what to do with the person's `profile` details
-once they authenticate with Google.
+once they have authorized your App to use Google details.
 
-Your custom handler should take the form:
+Your custom handler should have the following signature:
 ```js
 function custom_handler(request, reply, tokens, profile)
 ```
-where:
+The parameters are as follows:
 + **request** is the hapi request object with all the properties.
 + **reply** is the standard hapi reply object used to send your response to the client or send a rendered view.
 + ***tokens*** are the OAuth2 tokens returned by Google for the session
@@ -75,6 +78,16 @@ see: [**sample-profile.json**](https://github.com/dwyl/hapi-auth-google/blob/mas
 
 ### 5. Load the Plugin into your Hapi.js Server
 
+```js
+var opts = { REDIRECT_URL: '/googleauth', // must match google app redirect URI
+            handler: require('./google_oauth_handler.js') }; // your handler
+
+server.register([{ register: require('hapi-auth-google'), options:opts }], function (err) {
+  if(err){
+    // handle the error if the plugin failed to load:  
+  }
+});
+```
 
 
 ### Need an *Example* ?

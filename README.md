@@ -37,7 +37,7 @@ to distinguish them from other services.
 
 ### Custom Handler Function
 
-This is where you decide what to do with the person's profile details
+This is where you decide what to do with the person's `profile` details
 once they authenticate with Google.
 
 Your custom handler should take the form:
@@ -48,8 +48,9 @@ where:
 + **request** is the hapi request object with all the properties.
 + **reply** is the standard hapi reply object used to send your response to the client or send a rendered view.
 + ***tokens*** are the OAuth2 tokens returned by Google for the session
+see: [**sample-auth-token.json**](https://github.com/dwyl/hapi-auth-google/blob/master/test/fixtures/sample-auth-token.json)
 + ***profile*** is the person's Google Plus profile
-see:
+see: [**sample-profile.json**](https://github.com/dwyl/hapi-auth-google/blob/master/test/fixtures/sample-profile.json)
 
 
 ### Example ?
@@ -61,3 +62,7 @@ See: **/example** directory in this repo for a quick example.
 This plugin depends on
 [**google-api-nodejs-client**](https://www.npmjs.com/package/googleapis) -
 to do the authentication with Google and access to other Google Services. [![Build Status](https://travis-ci.org/google/google-api-nodejs-client.svg?branch=master)](https://travis-ci.org/google/google-api-nodejs-client) [![Coverage Status](https://coveralls.io/repos/google/google-api-nodejs-client/badge.svg?branch=master&service=github)](https://coveralls.io/github/google/google-api-nodejs-client?branch=master) [![Dependency Status](https://david-dm.org/google/google-api-nodejs-client.svg)](https://david-dm.org/google/google-api-nodejs-client)
+
+## Background Reading
+
+If you are new to OAuth2, see:https://developers.google.com/identity/protocols/OAuth2

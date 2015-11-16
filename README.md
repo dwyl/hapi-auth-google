@@ -79,8 +79,11 @@ see: [**sample-profile.json**](https://github.com/dwyl/hapi-auth-google/blob/mas
 ### 5. Load the Plugin into your Hapi.js Server
 
 ```js
-var opts = { REDIRECT_URL: '/googleauth', // must match google app redirect URI
-            handler: require('./google_oauth_handler.js') }; // your handler
+var opts = {
+  REDIRECT_URL: '/googleauth', // must match google app redirect URI
+  handler: require('./google_oauth_handler.js'), // your handler
+  scope: 'https://www.googleapis.com/auth/plus.profile.emails.read'
+};
 
 server.register([{ register: require('hapi-auth-google'), options:opts }], function (err) {
   if(err){

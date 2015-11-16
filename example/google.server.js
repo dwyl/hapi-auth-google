@@ -8,8 +8,11 @@ server.connection({
 	port: Number(process.env.PORT)
 });
 
-var opts = { REDIRECT_URL: server.info.uri + '/googleauth',
-            handler: require('./google_oauth_handler.js') };
+var opts = {
+  REDIRECT_URL: '/googleauth',            // must match google app redirect URI
+  handler: require('./google_oauth_handler.js'), // your handler
+  scope: 'https://www.googleapis.com/auth/plus.profile.emails.read' // profile
+};
 
 var hapi_auth_google = require('../lib');
 

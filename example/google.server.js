@@ -15,7 +15,7 @@ var hapi_auth_google = require('../lib');
 
 server.register([{ register: require('../lib'), options:opts }], function (err) {
   // handle the error if the plugin failed to load:
-  assert(!err, "FAILED TO LOAD PLUGIN!!! :-(")
+  assert(!err, "FAILED TO LOAD PLUGIN!!! :-("); // fatal error
 });
 
 server.route({

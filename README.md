@@ -46,10 +46,10 @@ function custom_handler(request, reply, tokens, profile)
 ```
 where:
 + **request** is the hapi request object with all the properties.
-+ **reply** is the standard hapy reply object used to send your response to the client or send a rendered view.
++ **reply** is the standard hapi reply object used to send your response to the client or send a rendered view.
 + ***tokens*** are the OAuth2 tokens returned by Google for the session
 + ***profile*** is the person's Google Plus profile
-see: 
+see:
 
 
 ### Example ?

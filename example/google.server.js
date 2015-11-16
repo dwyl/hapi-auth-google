@@ -9,7 +9,7 @@ server.connection({
 });
 
 var opts = {
-  REDIRECT_URL: '/googleauth',            // must match google app redirect URI
+  REDIRECT_URL: '/googleauth',  // must match google app redirect URI
   handler: require('./google_oauth_handler.js'), // your handler
   scope: 'https://www.googleapis.com/auth/plus.profile.emails.read' // profile
 };
@@ -26,7 +26,9 @@ server.route({
   path: '/',
   handler: function(req, reply) {
     var url = server.generate_google_oauth2_url();
-    reply("<a href='" + url +"'>Click to Login!</a>" );
+		var imgsrc = 'https://developers.google.com/accounts/images/sign-in-with-google.png';
+		var btn = '<a href="' + url +'"><img src="' +imgsrc +'" alt="Login With Google"></a>'
+    reply(btn);
   }
 });
 

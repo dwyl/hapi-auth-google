@@ -41,12 +41,12 @@ https://console.developers.google.com
 
 > If you are totally new to using the Google API,
 we created   
-[***GOOGLE-APP-STEP-BY-STEP-GUIDE***](https://github.com/dwyl/hapi-auth-google/blob/master/CREATE-GOOGLE-APP-STEP-BY-STEP-GUIDE.md) *just* for you!  
+[***GOOGLE-APP-STEP-BY-STEP-GUIDE***](https://github.com/dwyl/hapi-auth-google/blob/master/GOOGLE-APP-STEP-BY-STEP-GUIDE.md) *just* for you!  
 ( *Note: if you still have any questions*, ***ask***! )
 
 ### 3. Export the *Required* Environment Variables
 
-Once you've created your app following the [*GOOGLE-APP-STEP-BY-STEP-GUIDE*](https://github.com/dwyl/hapi-auth-google/blob/master/CREATE-GOOGLE-APP-STEP-BY-STEP-GUIDE.md)
+Once you've created your app following the [*GOOGLE-APP-STEP-BY-STEP-GUIDE*](https://github.com/dwyl/hapi-auth-google/blob/master/GOOGLE-APP-STEP-BY-STEP-GUIDE.md)
 
 Export the Environment Variables:
 ```sh

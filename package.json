@@ -39,6 +39,7 @@
     "hoek": "^3.0.4",
     "istanbul": "^0.4.0",
     "jshint": "^2.8.0",
+    "jsonwebtoken": "^5.4.1",
     "nock": "^3.0.0",
     "nodemon": "^1.8.1",
     "pre-commit": "^1.1.1",

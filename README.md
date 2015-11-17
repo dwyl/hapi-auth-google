@@ -52,7 +52,8 @@ Export the Environment Variables:
 ```sh
 GOOGLE_CLIENT_ID=YourAppsClientId.apps.googleusercontent.com
 GOOGLE_CLIENT_SECRET=SuperSecret
-BASE_URL=http://localhost:8000
+BASE_URL=http://localhost:8000 # same as Authorized JavaScript Origin
+JWT_SECRET=SomethingSuperHardToGuess-->grc.com/passwords.htm # Optionally use JWTs
 ```
 We export the two variables prefixed with `GOOGLE_`
 to distinguish them from other services you may be using.
@@ -61,12 +62,13 @@ The `BASE_URL` is required to know which url your app is using.
 it needs to be identical to the `Authorized JavaScript Origin`
 that you set in step 2.8 above.
 
-> Note: If you are new to Environment Variables or need a reminder,  
+> Note: If you (*or anyone on your team*) are new to
+Environment Variables or need a refresher,  
 see: [https://github.com/dwyl/**learn-environment-variables**](https://github.com/dwyl/learn-environment-variables)
 
 ### 4. Create Your (Custom) Handler Function
 
-This is where you decide what to do with the person's `profile` details
+This is where you decide what to do with the person's `profile` details  
 once they have authorized your App to use Google details.
 
 Your custom handler should have the following signature:
@@ -76,7 +78,7 @@ function custom_handler(request, reply, tokens, profile) {
   // use the reply() to send a response/view to the visitor
 }
 ```
-The parameters are as follows:
+The handler function parameters are:
 + **request** is the hapi request object with all the properties.
 + **reply** is the standard hapi reply object used to send your response to the client or send a rendered view.
 + ***tokens*** are the OAuth2 tokens returned by Google for the session
@@ -102,6 +104,7 @@ server.register([{ register: require('hapi-auth-google'), options:opts }],
   if(err){
     // handle the error if the plugin failed to load:  
   }
+  // the rest of your app ...
 });
 ```
 
@@ -126,8 +129,10 @@ See: **/example** directory in this repo for a quick example.
 
 This plugin depends on the ***Official***
 [**google-api-nodejs-client**](https://www.npmjs.com/package/googleapis) -
-to do the authentication with Google and access to other Google Services. The  [![Build Status](https://travis-ci.org/google/google-api-nodejs-client.svg?branch=master)](https://travis-ci.org/google/google-api-nodejs-client) [![Coverage Status](https://coveralls.io/repos/google/google-api-nodejs-client/badge.svg?branch=master&service=github)](https://coveralls.io/github/google/google-api-nodejs-client?branch=master) [![Dependency Status](https://david-dm.org/google/google-api-nodejs-client.svg)](https://david-dm.org/google/google-api-nodejs-client)
+to do the authentication with Google and access to other Google Services. [![Build Status](https://travis-ci.org/google/google-api-nodejs-client.svg?branch=master)](https://travis-ci.org/google/google-api-nodejs-client) [![Coverage Status](https://coveralls.io/repos/google/google-api-nodejs-client/badge.svg?branch=master&service=github)](https://coveralls.io/github/google/google-api-nodejs-client?branch=master) [![Dependency Status](https://david-dm.org/google/google-api-nodejs-client.svg)](https://david-dm.org/google/google-api-nodejs-client)
 
 ## Background Reading
 
-If you are new to OAuth2, see:https://developers.google.com/identity/protocols/OAuth2
+If you are new to OAuth2, see:
++ Intro to OAuth 2.0: https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2
++ Google OAuth2 in detail: https://developers.google.com/identity/protocols/OAuth2

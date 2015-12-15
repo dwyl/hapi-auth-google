@@ -4,7 +4,7 @@ module.exports = function custom_handler(req, reply, tokens, profile) {
   if(profile) {
     // extract the relevant data from Profile to store in JWT object
     var session = {
-      fistname : profile.name.givenName, // the person's first name e.g: Anita
+      firstname : profile.name.givenName, // the person's first name e.g: Anita
       image    : profile.image.url,      // profile image url
       id       : profile.id,             // google+ id
       exp      : Math.floor(new Date().getTime()/1000) + 7*24*60*60, // Epiry in seconds!

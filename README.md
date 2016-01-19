@@ -52,7 +52,8 @@ Export the Environment Variables:
 ```sh
 GOOGLE_CLIENT_ID=YourAppsClientId.apps.googleusercontent.com
 GOOGLE_CLIENT_SECRET=SuperSecret
-BASE_URL=http://localhost:8000 # same as Authorized JavaScript Origin
+PORT=8000
+BASE_URL=http://localhost:8000 # Must be identical to "Authorized JavaScript Origin"
 JWT_SECRET=SomethingSuperHardToGuess-->grc.com/passwords.htm # Optionally use JWTs
 ```
 We export the two variables prefixed with `GOOGLE_`

@@ -46,6 +46,6 @@
     "tape": "^4.4.0"
   },
   "dependencies": {
-    "googleapis": "^2.1.7"
+    "googleapis": "^3.1.0"
   }
 }

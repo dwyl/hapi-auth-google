@@ -1,6 +1,6 @@
 {
   "name": "hapi-auth-google",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Easily allow people to login to your apps using their Google Account",
   "main": "lib/index.js",
   "directories": {
@@ -34,18 +34,18 @@
     "node": ">=4.0"
   },
   "devDependencies": {
-    "env2": "^2.0.6",
-    "hapi": "^13.2.1",
-    "istanbul": "^0.4.2",
-    "jshint": "^2.9.1",
-    "jsonwebtoken": "^5.7.0",
-    "nock": "^7.2.2",
-    "nodemon": "^1.9.1",
+    "env2": "^2.0.7",
+    "hapi": "^13.3.0",
+    "istanbul": "^0.4.3",
+    "jshint": "^2.9.2",
+    "jsonwebtoken": "^6.2.0",
+    "nock": "^8.0.0",
+    "nodemon": "^1.9.2",
     "pre-commit": "^1.1.2",
     "tap-spec": "^4.1.1",
     "tape": "^4.5.1"
   },
   "dependencies": {
-    "googleapis": "^3.1.0"
+    "googleapis": "^5.2.1"
   }
 }

@@ -32,7 +32,6 @@ test(file+'/googleauth?code=oauth2codehere', function(t) {
   });
 });
 
-
 test(file+'Mock /googleauth?code=oauth2codehere', function(t) {
   // google oauth2 token request url:
   var fs = require('fs');
@@ -56,12 +55,9 @@ test(file+'Mock /googleauth?code=oauth2codehere', function(t) {
     url: "/googleauth?code=myrandomtoken"
   };
   server.inject(options, function(response) {
-    t.equal(response.statusCode, 200, "Server is working.");
+    t.equal(response.statusCode, 200, "/googleauth returns valid oauth2 token");
     var expected = 'Hello Alex You Logged in Using Goolge!';
-    t.equal(response.payload, expected, "")
-    console.log(' - - - - - - - - - - - - - - - - - -');
-    console.log(response.payload);
-    console.log(' - - - - - - - - - - - - - - - - - -');
+    t.equal(response.payload, expected, "> " + expected);
     server.stop(function(){ });
     t.end();
   });

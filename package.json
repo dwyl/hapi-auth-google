@@ -1,6 +1,6 @@
 {
   "name": "hapi-auth-google",
-  "version": "3.2.1",
+  "version": "8.0.0",
   "description": "Easily allow people to login to your apps using their Google Account",
   "main": "lib/index.js",
   "directories": {
@@ -11,7 +11,7 @@
     "coverage": "./node_modules/.bin/istanbul cover ./node_modules/tape/bin/tape ./test/*.test.js && ./node_modules/.bin/istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
     "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc --exclude-path .gitignore .",
     "spec": "node ./node_modules/tape/bin/tape ./test/*.test.js | node_modules/tap-spec/bin/cmd.js",
-    "test": "./node_modules/.bin/istanbul cover ./node_modules/tape/bin/tape ./test/*.test.js",
+    "test": "PORT=8000 ./node_modules/.bin/istanbul cover ./node_modules/tape/bin/tape ./test/*.test.js",
     "start": "PORT=8000 node_modules/.bin/nodemon example/google.server.js"
   },
   "repository": {
@@ -34,11 +34,11 @@
     "node": ">=4.0"
   },
   "devDependencies": {
-    "env2": "^2.0.8",
-    "hapi": "^13.4.0",
+    "env2": "^2.1.0",
+    "hapi": "^13.4.1",
     "istanbul": "^0.4.3",
     "jshint": "^2.9.2",
-    "jsonwebtoken": "^6.2.0",
+    "jsonwebtoken": "^7.0.0",
     "nock": "^8.0.0",
     "nodemon": "^1.9.2",
     "pre-commit": "^1.1.3",
@@ -46,6 +46,6 @@
     "tape": "^4.5.1"
   },
   "dependencies": {
-    "googleapis": "^7.0.0"
+    "googleapis": "^8.0.0"
   }
 }

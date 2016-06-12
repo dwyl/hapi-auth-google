@@ -23,7 +23,7 @@ into a Hapi-based Web Application / API.
 
 + It's _**a lot simpler**_ than "_Passport_" or "_Bell_"; you can read the code in a few minutes: [/lib/index.js](https://github.com/dwyl/hapi-auth-google/blob/master/lib/index.js)
 + _Uses_ **Google's Official Node.js module** and *nothing else*.
-+ _Complete_ **instructions, example && tests** to get you _**up and running in 5 mins**_.
++ _Complete_ **[step-by-step instructions](https://github.com/dwyl/hapi-auth-google/blob/master/GOOGLE-APP-STEP-BY-STEP-GUIDE.md), example && tests** to get you _**up and running in 5 mins**_.
 + Always **up-to-date** - we use this plugin in our/client projects
 so we are quick to update it when required.
 + _**We're here to help**_ if you get stuck! [![Join the chat at https://gitter.im/dwyl/chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dwyl/chat?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)

@@ -34,7 +34,7 @@
     "node": ">=4.0"
   },
   "devDependencies": {
-    "env2": "^2.1.0",
+    "env2": "^2.1.1",
     "hapi": "^13.4.1",
     "istanbul": "^0.4.3",
     "jshint": "^2.9.2",
@@ -46,6 +46,6 @@
     "tape": "^4.5.1"
   },
   "dependencies": {
-    "googleapis": "^9.0.0"
+    "googleapis": "^12.2.0"
   }
 }

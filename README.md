@@ -110,6 +110,8 @@ declaring your desired options:
 var opts = {
   REDIRECT_URL: '/googleauth', // must match google app redirect URI from step 2.8
   handler: require('./google_oauth_handler.js'), // your handler
+  access_type: 'online', // options: offline, online
+  approval_prompt: 'auto', // options: always, auto
   scope: 'https://www.googleapis.com/auth/plus.profile.emails.read' // ask for their email address
 };
 

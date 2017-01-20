@@ -11,6 +11,8 @@ server.connection({
 var opts = {
   REDIRECT_URL: '/googleauth',  // must match google app redirect URI
   handler: require('./google_oauth_handler.js'), // your handler
+  access_type: 'offline', // options: offline, online
+  approval_prompt: 'always', // options: always, auto
   scope: 'https://www.googleapis.com/auth/plus.profile.emails.read' // profile
 };
 

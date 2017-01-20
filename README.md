@@ -110,7 +110,13 @@ declaring your desired options:
 var opts = {
   REDIRECT_URL: '/googleauth', // must match google app redirect URI from step 2.8
   handler: require('./google_oauth_handler.js'), // your handler
-  scope: 'https://www.googleapis.com/auth/plus.profile.emails.read' // ask for their email address
+  access_type: 'online', // options: offline, online
+  approval_prompt: 'auto', // options: always, auto
+  scope: 'https://www.googleapis.com/auth/plus.profile.emails.read', // ask for their email address
+  // can use process.env or if you prefer, define here in options:
+  BASE_URL: process.env.BASE_URL,
+  GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
+  GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET
 };
 
 server.register([{ register: require('hapi-auth-google'), options:opts }],

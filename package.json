@@ -1,6 +1,6 @@
 {
   "name": "hapi-auth-google",
-  "version": "10.0.0",
+  "version": "16.0.0",
   "description": "Easily allow people to login to your apps using their Google Account",
   "main": "lib/index.js",
   "directories": {
@@ -46,6 +46,6 @@
     "tape": "^4.6.0"
   },
   "dependencies": {
-    "googleapis": "^12.2.0"
+    "googleapis": "^16.1.0"
   }
 }

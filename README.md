@@ -10,8 +10,8 @@ Let people authenticate with your application/website using their Google Account
 
 ## Why?
 
-There are
-[***900 Million***](http://techcrunch.com/2015/05/28/gmail-now-has-900m-active-users-75-on-mobile/) people using GMail so offering people the *option* of logging into
+There are more than 
+[***2 Billion***](https://www.theverge.com/2017/5/17/15654454/android-reaches-2-billion-monthly-active-users/) people with Google logins so offering people the *option* of logging into
 your App(s) using their Google Account makes a lot of sense.
 
 ## What?

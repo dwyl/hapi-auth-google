@@ -10,9 +10,7 @@ Let people authenticate with your application/website using their Google Account
 
 ## Why?
 
-There are
-[***900 Million***](http://techcrunch.com/2015/05/28/gmail-now-has-900m-active-users-75-on-mobile/) people using GMail so offering people the *option* of logging into
-your App(s) using their Google Account makes a lot of sense.
+As of May 2017, Google has over [2 Billion Android users](https://www.theverge.com/2017/5/17/15654454/android-reaches-2-billion-monthly-active-users) alone. In addition, there are over [a billion](https://techcrunch.com/2016/02/01/gmail-now-has-more-than-1b-monthly-active-users/) who use gmail (thus, have a Google account) as of 2016, and THEN there are all the Google For Education users, which was [45 million in 2015](http://www.prnewswire.com/news-releases/google-apps-for-education-anticipated-to-reach-110-million-users-by-2020-300107878.html) and was growing at a rate of 40+%/year. To put it conservatively, there are more than 2 Billion users out there who *could* authenticate with your app using that Google account so offering people the *option* of logging into your App(s) using their Google Account makes a lot of sense.
 
 ## What?
 
@@ -110,6 +108,11 @@ declaring your desired options:
 var opts = {
   REDIRECT_URL: '/googleauth', // must match google app redirect URI from step 2.8
   handler: require('./google_oauth_handler.js'), // your handler
+  config: {  // optional route config (as for any route in hapi)
+    description: 'Google auth callback',
+    notes: 'Handled by hapi-auth-google plugin',
+    tags: ['api', 'auth', 'plugin']
+  },
   access_type: 'online', // options: offline, online
   approval_prompt: 'auto', // options: always, auto
   scope: 'https://www.googleapis.com/auth/plus.profile.emails.read', // ask for their email address

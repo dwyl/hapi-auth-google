@@ -17,13 +17,7 @@ const options = {
   scope: 'https://www.googleapis.com/auth/plus.profile.emails.read' // profile
 };
 
-server.register([{
-  plugin: {
-    version: require('../package').version,
-    name: 'GoogleAuth',
-    register: require('../lib')
-  }, options
-}]).then(() => {
+server.register([{plugin: require('../lib'), options}]).then(() => {
 
   // Returns HTML with "Login with Google" button
   server.route({
@@ -39,9 +33,7 @@ server.register([{
     }
   });
 
-  server.initialize().then(async () => {
-    await server.start();
-    
+  server.start().then(() => {
     console.log('Hapi.js Version Running', server.version);
 
     console.log('Registered Routes:')
@@ -50,16 +42,16 @@ server.register([{
     console.log('Now Visit: http://localhost:' + server.info.port);
   }).catch(err => {
     console.log('Error!', err);
-    throw err;
+    process.exit(1);
   });
 
 }).catch(err => {
   console.log(err);
-  assert(!err, "Failed to load the plugin!"); // fatal error
+  assert(!err, "Failed to load the plugin!");
 });
 
-process.on('uncaughtException', function(data) {
-  console.log(data);
-});
+// process.on('uncaughtException', function(data) {
+//   console.log(data);
+// });
 
 module.exports = server;

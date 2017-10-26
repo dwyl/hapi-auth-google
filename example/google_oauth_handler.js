@@ -15,11 +15,10 @@ module.exports = function custom_handler(request, h, tokens, profile) {
     // TODO: Store the Profile and Oauth tokens in the Redis DB using G+ id as key
     // Detailed Example...? https://github.com/dwyl/hapi-auth-google/issues/2
 
-    console.log(`Hello ${session.firstname} You Logged in Using Goolge!`);
-    
-    // reply to client with a view
+
+    // TODO: reply to client with a view
     let response = h.response(`Hello ${session.firstname} You Logged in Using Goolge!`);
-    response.state('token', token).takeover(); // see: http://hapijs.com/tutorials/cookies
+    response.state('token', token); // see: http://hapijs.com/tutorials/cookies
 
     return response;
 

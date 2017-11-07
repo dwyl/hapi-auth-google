@@ -1,6 +1,6 @@
 {
   "name": "hapi-auth-google",
-  "version": "17.2.0",
+  "version": "17.0.0",
   "description": "Easily allow people to login to your apps using their Google Account",
   "main": "lib/index.js",
   "directories": {
@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/dwyl/hapi-auth-google#readme",
   "engines": {
-    "node": ">=4.0"
+    "node": ">=8.0"
   },
   "dependencies": {
     "googleapis": "^22.2.0"

@@ -34,18 +34,18 @@
     "node": ">=8.0"
   },
   "dependencies": {
-    "googleapis": "^31.0.2"
+    "googleapis": "^22.2.0"
   },
   "devDependencies": {
-    "hapi": "^17.0.0",
+    "hapi": "^17.5.0",
     "env2": "^2.2.0",
     "jshint": "^2.9.2",
     "istanbul": "^0.4.5",
-    "jsonwebtoken": "^8.1.0",
+    "jsonwebtoken": "^8.2.1",
     "pre-commit": "^1.2.2",
     "nodemon": "^1.12.1",
     "tap-spec": "^4.1.1",
-    "nock": "^9.0.25",
-    "tape": "^4.8.0"
+    "nock": "^9.2.6",
+    "tape": "^4.9.0"
   }
 }

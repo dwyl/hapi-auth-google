@@ -82,9 +82,9 @@ once they have authorized your App to use Google details.
 
 Your custom handler should have the following signature:
 ```js
-function custom_handler(request, reply, tokens, profile) {
+function custom_handler(request, h, tokens, profile) {
   // save the profile as a session so you can personalize their experience of your app
-  // use the reply() to send a response/view to the visitor
+  // return data or use the helper toolkit (h) to send a response/view to the visitor
 }
 ```
 The handler function parameters are:
@@ -103,9 +103,10 @@ see: [**sample-profile.json**](https://github.com/dwyl/hapi-auth-google/blob/mas
 The final step is to register the plugin into your Hapi.js Server
 declaring your desired options:
 
+Example (Hapi v17):
 ```js
 // declare your desired options for the plugin
-var opts = {
+var options = {
   REDIRECT_URL: '/googleauth', // must match google app redirect URI from step 2.8
   handler: require('./google_oauth_handler.js'), // your handler
   config: {  // optional route config (as for any route in hapi)
@@ -122,13 +123,13 @@ var opts = {
   GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET
 };
 
-server.register([{ register: require('hapi-auth-google'), options:opts }],
- function (err) {
-  if(err){
-    // handle the error if the plugin failed to load:  
-  }
-  // the rest of your app ...
-});
+try {
+  await server.register({ plugin: require('hapi-auth-google'), options });
+} catch (err){
+  // handle the error if the plugin failed to load:  
+}
+
+// the rest of your app ...
 ```
 
 #### `options` *explained*

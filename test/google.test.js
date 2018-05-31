@@ -57,9 +57,9 @@ async function initTests() {
     const nock = require('nock');
     
     var token_fixture = fs.readFileSync('./test/fixtures/sample-auth-token.json');
-    var scope = nock('https://accounts.google.com')
+    var scope = nock('https://www.googleapis.com')
         .persist() // https://github.com/pgte/nock#persist
-        .post('/o/oauth2/token')
+        .post('/oauth2/v4/token')
         .reply(200, token_fixture);
 
     // see: http://git.io/v4nTR for google plus api url
